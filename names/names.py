@@ -20,13 +20,24 @@ duplicates = []
 # binary search tree
 # runtime: 0.15756702423095703 seconds
 # O(n log n)
-bst = BinarySearchTree(names_1[0])
-for name_1 in names_1[1:]:
-    bst.insert(name_1)
+# bst = BinarySearchTree(names_1[0])
+# for name_1 in names_1[1:]:
+#     bst.insert(name_1)
 
-for name_2 in names_2:
-    if bst.contains(name_2):
-        duplicates.append(name_2)
+# for name_2 in names_2:
+#     if bst.contains(name_2):
+#         duplicates.append(name_2)
+
+# set1 = set(names_1)
+# set2 = set(names_2)
+# duplicates = set1.intersection(set2)
+
+names_2_set = set(names_2)
+for name in names_1:
+    if name in names_2_set:
+        duplicates.append(name)
+
+
 
 end_time = time.time()
 print(f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
